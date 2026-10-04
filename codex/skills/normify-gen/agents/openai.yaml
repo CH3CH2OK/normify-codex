@@ -1,0 +1,4 @@
+interface:
+  display_name: "Normify 项目架构图"
+  short_description: "分析代码仓库，生成可下钻的双语架构图，校验模块契约并同步代码变更"
+  default_prompt: "用 $normify-gen 为当前仓库生成模块树和交互式架构图。"

@@ -1,0 +1,97 @@
+{
+  "name": "normify-codex",
+  "version": "0.5.4-codex.1",
+  "description": "Normify for Codex: 31 architecture tools via MCP, validated bilingual module trees, interactive diagrams, and a self-contained Codex skill.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "files": [
+    "lib",
+    "skills",
+    "vendor",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "codex",
+    "NOTICE",
+    "THIRD_PARTY_NOTICES.md",
+    "UPSTREAM_README.zh-CN.md",
+    "README_EN.md"
+  ],
+  "license": "MIT",
+  "author": "yan-mc",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "agent-skill",
+    "architecture",
+    "structure-diagram",
+    "module-tree",
+    "normify",
+    "codex",
+    "mcp",
+    "codex-skill"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CH3CH2OK/normify-codex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CH3CH2OK/normify-codex/issues"
+  },
+  "homepage": "https://github.com/CH3CH2OK/normify-codex#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-rc <5",
+    "@deepseek-ai/dsh-tools": ">=0.1.5-rc.2 <0.2.0",
+    "@deepseek-ai/dsh-skill": ">=0.1.5-rc.2 <0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-skill": {
+      "optional": true
+    },
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "yaml": "2.9.1",
+    "@modelcontextprotocol/sdk": "1.32.0",
+    "ajv": "8.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "typescript": "^5.9.0",
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/schemastery": "^3.18.2",
+    "@deepseek-ai/cosmokit": "^1.8.3",
+    "@standard-schema/spec": "^1.1.0"
+  },
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json && node codex/sync-runtime.mjs",
+    "typecheck": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test": "node tests/engine-e2e.mjs && node tests/companion-e2e.mjs && node tests/regression-0.5.2.mjs && node tests/regression-0.5.3.mjs && node tests/regression-0.5.4.mjs",
+    "codex:serve": "node codex/mcp.mjs",
+    "codex:list": "node codex/skills/normify-gen/scripts/normify.mjs list",
+    "codex:sync-runtime": "node codex/sync-runtime.mjs",
+    "test:codex": "node tests/codex-e2e.mjs",
+    "postinstall": "node codex/sync-runtime.mjs",
+    "test:all": "npm test && npm run test:codex"
+  },
+  "contributors": [
+    {
+      "name": "CH3CH2OK",
+      "url": "https://github.com/CH3CH2OK"
+    }
+  ]
+}

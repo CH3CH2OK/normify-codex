@@ -1,0 +1,18 @@
+{
+  "name": "normify-codex",
+  "version": "0.5.4-codex.1",
+  "upstream": "https://github.com/yan-mc/dsh-normify",
+  "upstreamCommit": "ed404e5b8db0010ff57ec8486ec8749421072545",
+  "upstreamVersion": "0.5.4",
+  "toolCount": 31,
+  "transport": "stdio",
+  "license": "MIT",
+  "changes": [
+    "Reuse upstream registerTools through a Codex adapter without Cordis services",
+    "Add SDK-based MCP discovery, execution, annotations and error propagation",
+    "Validate JSON Schema arguments and serialize operations",
+    "Bundle a self-contained Codex skill with CLI fallback and original engine",
+    "Add Windows installer, Chinese instructions and integration tests"
+  ],
+  "limitation": "The optional DSH post-edit reminder hook is not implemented in Codex."
+}

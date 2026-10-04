@@ -1,0 +1,19 @@
+Normify for Codex
+
+Derived from dsh-normify, Copyright (c) 2026 yan-mc.
+Upstream: https://github.com/yan-mc/dsh-normify
+Baseline: v0.5.4, commit ed404e5b8db0010ff57ec8486ec8749421072545.
+
+Codex adaptation and publication: Copyright (c) 2026 CH3CH2OK.
+Repository: https://github.com/CH3CH2OK/normify-codex
+
+The original MIT license and copyright notice are retained in LICENSE.
+Codex additions are distributed under the same MIT license.
+This project is not endorsed by the upstream author or OpenAI.
+
+Vendored schemastery and cosmokit:
+Copyright (c) 2021-present Shigma, MIT.
+Their original licenses are retained in vendor/ and in the skill runtime copies.
+
+Installed and bundled dependencies retain their own licenses.
+See THIRD_PARTY_NOTICES.md for the principal runtime dependencies.
